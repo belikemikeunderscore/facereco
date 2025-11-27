@@ -1,5 +1,4 @@
 import cv2
-import os
 import numpy as np
 from pathlib import Path
 import time
@@ -56,12 +55,6 @@ def get_face(gray, rect):
     x, y, w, h = rect
     face = gray[y:y+h, x:x+w]
     return cv2.resize(face, (IMG_WIDTH, IMG_HEIGHT))
-
-def start_typing_label(current_label):
-    global typed_label, is_typing
-    typed_label = ""
-    is_typing = True
-    return None  # clear current label
 
 def capture_samples(label_name, cam, display_window="LBPH"):
     label_dir = DATASET_DIR / label_name
