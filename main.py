@@ -165,7 +165,6 @@ def input_birthday_for_label(label_name):
     global typed_label, is_typing
     typed_label = ""
     is_typing = True
-    input_stage = "birthday"  # distinguish typing a name vs birthday
     while True:
         key = cv2.waitKey(1) & 0xFF
         if key in [13,10]:  # Enter
@@ -208,8 +207,6 @@ def main():
                 face_img = get_face(gray,r)
                 try:
                     label_id, conf = recognizer.predict(face_img)
-
-                    CONF_THRESHOLD = 60
 
                     if conf <= 30:
                         color = (0, 255, 0)         # green → very confident
