@@ -8,4 +8,4 @@ Este projeto implementa um sistema básico de reconhecimento facial usando **Ope
 
 ```bash
 pip install opencv-python opencv-contrib-python numpy
-``
+```
